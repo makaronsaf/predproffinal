@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Страница1</title>
+    <script src="https://cdn.jsdelivr.net"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #0b0e14;
+            color: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .card {
+            background: #1a1f26;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            max-width: 450px;
+        }
+
+        input,
+        button {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 6px;
+            border: none;
+            box-sizing: border-box;
+        }
+
+        input {
+            background: #2c333d;
+            color: white;
+        }
+
+        button {
+            background: #3498db;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background: #2980b9;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .status {
+            color: #2ecc71;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="login-section" class="card">
+        <h2>Вход в систему </h2>
+        <input type="text" id="username" placeholder="Логин">
+        <input type="password" id="password" placeholder="Пароль">
+        <button onclick="login()">Войти</button>
+        <p id="login-error" style="color: #e74c3c;"></p>
+    </div>
+
+    <div id="admin-section" class="card hidden">
+        <h2>Панель администратора</h2>
+        <div class="status">Режим: Создание учетных записей</div>
+        <input type="text" id="new-user" placeholder="Имя нового пользователя">
+        <input type="password" id="new-pass" placeholder="Пароль">
+        <button onclick="createUser()" style="background: #8e44ad;">Создать пользователя</button>
+        <button onclick="logout()" style="background: #555;">Выйти</button>
+    </div>
+
+    <div id="user-section" class="card hidden">
+        <h2>Анализ сигналов</h2>
+        <p>Загрузите аудиофайл сигнала (.wav) для обработки ИИ</p>
+        <input type="file" id="signal-file" accept="audio/*">
+        <button onclick="classifySignal()">Классифицировать сигнал</button>
+        <div id="result" style="margin-top: 20px; font-weight: bold; color: #f1c40f;"></div>
+        <button onclick="logout()" style="background: #555;">Выйти</button>
+    </div>

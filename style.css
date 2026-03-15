@@ -1,0 +1,12 @@
+const civilizations = ["Альфа Центавра", "Плеяды", "Андромеда", "Орион", "Сириус"];
+                const randomClass = civilizations[Math.floor(Math.random() * civilizations.length)];
+                resDiv.innerHTML = `Результат: Цивилизация-отправитель — <br><span style="font-size: 1.5em;">${randomClass}</span>`;
+            }, 2000);
+        }
+
+        function logout() {
+            location.reload();
+        }
+    </script>
+</body>
+</html>
